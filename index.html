@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+
+  <body>
+    <form action="/upload-profile" method="POST" enctype="multipart/form-data">
+    
+    <!-- 1. hidden: 사용자에게는 안 보이지만 서버로 보낼 데이터 -->
+    <!-- 보통 유저 ID, 게시글 번호, 페이지 번호 등을 숨겨서 보낼 때 씁니다. -->
+    <input type="hidden" name="userId" value="user_12345">
+
+    <!-- 2. file: 컴퓨터나 스마트폰에서 파일 업로드 -->
+    <fieldset>
+        <legend>프로필 사진 업로드 (file)</legend>
+        <label for="profile-pic">이미지 파일 선택:</label>
+        <input type="file" id="profile-pic" name="profilePic" accept="image/*">
+        <small>* 이미지 파일만 업로드 가능합니다.</small>
+    </fieldset>
+
+    <br>
+
+    <!-- 3. color: 색상 선택기(Color Picker) 팝업 -->
+    <fieldset>
+        <legend>테마 색상 선택 (color)</legend>
+        <label for="theme-color">원하는 배경색:</label>
+        <input type="type" id="theme-color" name="themeColor" value="#ff0000">
+        <small>* 기본값은 빨간색(#ff0000)입니다.</small>
+    </fieldset>
+
+    <br>
+
+    <!-- 4. range: 슬라이더 바 형태의 범위 조절 UI -->
+    <fieldset>
+        <legend>알림 볼륨 조절 (range)</legend>
+        <label for="volume-control">볼륨 크기:</label>
+        <input type="range" id="volume-control" name="volume" min="0" max="100" step="5" value="50">
+    </fieldset>
+
+    <br>
+
+    <button type="submit">설정 저장하기</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
